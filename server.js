@@ -13,6 +13,8 @@ app.use(compression());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
+const routes = require('./Routes/apiRoutes')(app)
+
 app.use(express.static("public"));
 
 mongoose.connect("mongodb://localhost/budget", {
